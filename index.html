@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Japan: Tokyo & Osaka</title>
+  <link rel="stylesheet" href="assests/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</head>
+<body>
+
+  <header>
+    <h1>Discover Japan</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#tokyo">Tokyo</a>
+      <a href="#osaka">Osaka</a>
+      <a href="#map">Map</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Explore Tokyo and Osaka</h2>
+    <p>Discover the perfect mix of modern cities and traditional culture.</p>
+  </section>
+
+  <section id="tokyo">
+    <h2>Tokyo</h2>
+    <p>The heart of Japan — where technology meets tradition.</p>
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide"><img src="./assests/images/tokyo-tower.webp" alt="Tokyo Tower"></li>
+            <li class="glide__slide"><img src="./assests/images/shibuya-crossing.jpg" alt="Shibuya Crossing"></li>
+            <li class="glide__slide"><img src="./assests/images/Asakusa.png" alt="Asakusa"></li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <section id="osaka">
+    <h2>Osaka</h2>
+    <p>Known as the Kitchen of Japan — famous for food and fun.</p>
+      <div class="gallery">
+        <a href="./assests/images/Dotonbori River.jpg" data-lightbox="osaka" data-title="Dotonbori River">
+          <img src="./assests/images/Dotonbori River.jpg" alt="Dotonbori River">
+        </a>
+        <a href="./assests/images/Osaka Castle.jpg" data-lightbox="osaka" data-title="Osaka Castle">
+          <img src="./assests/images/Osaka Castle.jpg" alt="Osaka Castle">
+        </a>
+      </div>
+  </section>
+
+  <section id="map">
+    <h2>Map</h2>
+    <div id="mapid" style="height: 300px;"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Created by Kaoru</p>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="script.js"></script>
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <script>
+      new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 3000,
+        perView: 1
+      }).mount();
+    </script>
+  
+    <!-- Leaflet map -->
+    <script>
+      // Initialize Leaflet map
+      var map = L.map('mapid').setView([35.6762, 139.6503], 5); // Japan center
+  
+      // Add map tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      }).addTo(map);
+  
+      // Add markers
+      var tokyoMarker = L.marker([35.6895, 139.6917]).addTo(map);
+      tokyoMarker.bindPopup("<b>Tokyo</b><br>Capital of Japan").openPopup();
+  
+      var osakaMarker = L.marker([34.6937, 135.5023]).addTo(map);
+      osakaMarker.bindPopup("<b>Osaka</b><br>Known for food and fun");
+    </script>
+  </body>
+  </html>
+  
+</body>
+</html>

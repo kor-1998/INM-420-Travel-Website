@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+  
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+  
+/* header */
+header {
+    z-index: 1000;
+    background-color: #184A8C;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+  
+header h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+  
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+  
+nav a:hover {
+    color: #99E9F2;
+}
+  
+/* section */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+  
+section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #143C8C;
+} 
+  
+section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+  
+/* images */
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.gallery img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+  
+.gallery img:hover {
+    transform: scale(1.05);
+}
+  
+/* home */
+#home {
+    background-image: url("./images/travel.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 4px #143C8C;
+    padding: 120px 20px;
+}
+#home h2{
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: white;
+}
+#home p{
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+  
+/* map */
+#mapid {
+    height: 400px;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* contact */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+  
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    resize: none;
+}
+  
+form button {
+    background-color: #143C8C;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+  
+form button:hover {
+    background-color: #0F5AF2;
+}
+  
+/* footer */
+footer {
+    background-color: #184A8C;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+  
+/* responsive */
+@media (max-width: 768px) {
+    header h1 {
+      font-size: 20px;
+    }
+  
+    nav a {
+      display: inline-block;
+      margin: 5px;
+      font-size: 14px;
+    }
+  
+    section {
+      padding: 60px 15px;
+    }
+  
+    section h2 {
+      font-size: 20px;
+    }
+  
+    form {
+      width: 90%;
+    }
+}
+  
